@@ -76,6 +76,9 @@
   {{- end -}}
 
   <link rel="stylesheet" href="{{ "css/main.css" | absURL }}" />
+  {{- if (hasPrefix .Dir "discography") -}}
+  <link rel="stylesheet" href="{{ "css/discography.css" | absURL }}" />
+  {{- end -}}
 
   {{- if .Site.Params.staticman -}}
   <link rel="stylesheet" href="{{ "css/staticman.css" | absURL }}" />
