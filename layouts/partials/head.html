@@ -86,7 +86,7 @@
   for (let i = 0; i < a.length; ++i) {
     a[i].addEventListener("play", function () {
       for (let j = 0; j < a.length; ++j) {
-        if (a[j] != this) { a[j].pause(); }
+        if (i != j) { a[j].pause(); }
       }
     }, false);
   }
