@@ -82,14 +82,16 @@
 {{- if (hasPrefix .File.Dir "discography") -}}
 <link rel="stylesheet" href="{{ "css/discography.css" | absURL }}" />
 <script>
-  let a = document.querySelectorAll("audio");
-  for (let i = 0; i < a.length; ++i) {
-    a[i].addEventListener("play", function () {
-      for (let j = 0; j < a.length; ++j) {
-        if (i != j) { a[j].pause(); }
-      }
-    }, false);
-  }
+  window.addEventListener("load", function () {
+    let a = document.querySelectorAll("audio");
+    for (let i = 0; i < a.length; ++i) {
+      a[i].addEventListener("play", function () {
+        for (let j = 0; j < a.length; ++j) {
+          if (a[j] != this) { a[j].pause(); }
+        }
+      }, false);
+    }
+  });
 </script>
 {{- end -}}
 {{- if (hasPrefix .File.BaseFileName "works") -}}
