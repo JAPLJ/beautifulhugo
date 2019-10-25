@@ -97,6 +97,9 @@
 {{- if (hasPrefix .File.BaseFileName "works") -}}
 <link rel="stylesheet" href="{{ "css/works.css" | absURL }}" />
 {{- end -}}
+{{- if (hasPrefix .File.BaseFileName "event_info") -}}
+<link rel="stylesheet" href="{{ "css/event_info.css" | absURL }}" />
+{{- end -}}
 
 {{- if .Site.Params.staticman -}}
 <link rel="stylesheet" href="{{ "css/staticman.css" | absURL }}" />
